@@ -1,0 +1,256 @@
+2025-01-07T20:58:08.980233-0300 INFO Chamando função 'pipeline_calcular_kpi_de_vendas_consolidado' com args ('data', ['csv', 'parquet']) e kwargs {} log.py
+2025-01-07T20:58:08.980380-0300 INFO Chamando função 'extrair_dados_e_consolidar' com args ('data',) e kwargs {} log.py
+2025-01-07T20:58:08.980638-0300 ERROR Exceção capturada em 'extrair_dados_e_consolidar': No objects to concatenate log.py
+Traceback (most recent call last):
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/pipeline.py", line 6, in <module>
+    pipeline_calcular_kpi_de_vendas_consolidado(pasta_argumento, formato_de_saida)
+    │                                           │                └ ['csv', 'parquet']
+    │                                           └ 'data'
+    └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x7f1efaa31a80>
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/log.py", line 27, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('data', ['csv', 'parquet'])
+             └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x7f1efaa319e0>
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/etl.py", line 39, in pipeline_calcular_kpi_de_vendas_consolidado
+    data_frame = extrair_dados_e_consolidar(pasta)
+                 │                          └ 'data'
+                 └ <function extrair_dados_e_consolidar at 0x7f1eface9080>
+
+> File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/log.py", line 27, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('data',)
+             └ <function extrair_dados_e_consolidar at 0x7f1f2831ccc0>
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/etl.py", line 13, in extrair_dados_e_consolidar
+    df_total = pd.concat(df_list, ignore_index=True)
+               │  │      └ []
+               │  └ <function concat at 0x7f1efbbaeb60>
+               └ <module 'pandas' from '/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/si...
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 382, in concat
+    op = _Concatenator(
+         └ <class 'pandas.core.reshape.concat._Concatenator'>
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 445, in __init__
+    objs, keys = self._clean_keys_and_objs(objs, keys)
+    │            │    │                    │     └ None
+    │            │    │                    └ []
+    │            │    └ <function _Concatenator._clean_keys_and_objs at 0x7f1efbbaede0>
+    │            └ <pandas.core.reshape.concat._Concatenator object at 0x7f1f28dfe510>
+    └ []
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 507, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+
+ValueError: No objects to concatenate
+2025-01-07T20:58:08.982268-0300 ERROR Exceção capturada em 'pipeline_calcular_kpi_de_vendas_consolidado': No objects to concatenate log.py
+Traceback (most recent call last):
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/pipeline.py", line 6, in <module>
+    pipeline_calcular_kpi_de_vendas_consolidado(pasta_argumento, formato_de_saida)
+    │                                           │                └ ['csv', 'parquet']
+    │                                           └ 'data'
+    └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x7f1efaa31a80>
+
+> File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/log.py", line 27, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('data', ['csv', 'parquet'])
+             └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x7f1efaa319e0>
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/etl.py", line 39, in pipeline_calcular_kpi_de_vendas_consolidado
+    data_frame = extrair_dados_e_consolidar(pasta)
+                 │                          └ 'data'
+                 └ <function extrair_dados_e_consolidar at 0x7f1eface9080>
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/log.py", line 27, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('data',)
+             └ <function extrair_dados_e_consolidar at 0x7f1f2831ccc0>
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/etl.py", line 13, in extrair_dados_e_consolidar
+    df_total = pd.concat(df_list, ignore_index=True)
+               │  │      └ []
+               │  └ <function concat at 0x7f1efbbaeb60>
+               └ <module 'pandas' from '/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/si...
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 382, in concat
+    op = _Concatenator(
+         └ <class 'pandas.core.reshape.concat._Concatenator'>
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 445, in __init__
+    objs, keys = self._clean_keys_and_objs(objs, keys)
+    │            │    │                    │     └ None
+    │            │    │                    └ []
+    │            │    └ <function _Concatenator._clean_keys_and_objs at 0x7f1efbbaede0>
+    │            └ <pandas.core.reshape.concat._Concatenator object at 0x7f1f28dfe510>
+    └ []
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 507, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+
+ValueError: No objects to concatenate
+2025-01-07T20:58:38.935187-0300 INFO Chamando função 'pipeline_calcular_kpi_de_vendas_consolidado' com args ('data', ['csv', 'parquet']) e kwargs {} log.py
+2025-01-07T20:58:38.935331-0300 INFO Chamando função 'extrair_dados_e_consolidar' com args ('data',) e kwargs {} log.py
+2025-01-07T20:58:38.950087-0300 INFO Função 'extrair_dados_e_consolidar' retornou             Produto    Categoria  Quantidade  Venda        Data
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15
+3    Notebook Gamer  Eletrônicos           2   1500  2023-01-17
+4     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17
+5  Teclado Mecânico  Eletrônicos           2    100  2023-01-17
+6    Notebook Gamer  Eletrônicos           7   1500  2023-01-16
+7     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16
+8  Teclado Mecânico  Eletrônicos           3    100  2023-01-16 log.py
+2025-01-07T20:58:38.952681-0300 INFO Chamando função 'calcular_kpi_de_total_de_vendas' com args (            Produto    Categoria  Quantidade  Venda        Data
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15
+3    Notebook Gamer  Eletrônicos           2   1500  2023-01-17
+4     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17
+5  Teclado Mecânico  Eletrônicos           2    100  2023-01-17
+6    Notebook Gamer  Eletrônicos           7   1500  2023-01-16
+7     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16
+8  Teclado Mecânico  Eletrônicos           3    100  2023-01-16,) e kwargs {} log.py
+2025-01-07T20:58:38.956204-0300 INFO Função 'calcular_kpi_de_total_de_vendas' retornou             Produto    Categoria  Quantidade  Venda        Data  Total
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15   4500
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15    300
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15    500
+3    Notebook Gamer  Eletrônicos           2   1500  2023-01-17   3000
+4     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17    420
+5  Teclado Mecânico  Eletrônicos           2    100  2023-01-17    200
+6    Notebook Gamer  Eletrônicos           7   1500  2023-01-16  10500
+7     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16    300
+8  Teclado Mecânico  Eletrônicos           3    100  2023-01-16    300 log.py
+2025-01-07T20:58:38.959130-0300 INFO Chamando função 'carregar_dados' com args (            Produto    Categoria  Quantidade  Venda        Data  Total
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15   4500
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15    300
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15    500
+3    Notebook Gamer  Eletrônicos           2   1500  2023-01-17   3000
+4     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17    420
+5  Teclado Mecânico  Eletrônicos           2    100  2023-01-17    200
+6    Notebook Gamer  Eletrônicos           7   1500  2023-01-16  10500
+7     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16    300
+8  Teclado Mecânico  Eletrônicos           3    100  2023-01-16    300, ['csv', 'parquet']) e kwargs {} log.py
+2025-01-07T20:58:38.962608-0300 ERROR Exceção capturada em 'carregar_dados': Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet. log.py
+Traceback (most recent call last):
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/pipeline.py", line 6, in <module>
+    pipeline_calcular_kpi_de_vendas_consolidado(pasta_argumento, formato_de_saida)
+    │                                           │                └ ['csv', 'parquet']
+    │                                           └ 'data'
+    └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x7f60002cbd80>
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/log.py", line 27, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('data', ['csv', 'parquet'])
+             └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x7f60002cbce0>
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/etl.py", line 41, in pipeline_calcular_kpi_de_vendas_consolidado
+    carregar_dados(data_frame_calculado, formato_de_saida)
+    │              │                     └ ['csv', 'parquet']
+    │              └             Produto    Categoria  Quantidade  Venda        Data  Total
+    │                0    Notebook Gamer  Eletrônicos           3   1500  2...
+    └ <function carregar_dados at 0x7f60002cbc40>
+
+> File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/log.py", line 27, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+             │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+             └ <function carregar_dados at 0x7f60002cbba0>
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/etl.py", line 34, in carregar_dados
+    df.to_parquet("dados.parquet", index=False)
+    │  └ <function DataFrame.to_parquet at 0x7f6000c1a3e0>
+    └             Produto    Categoria  Quantidade  Venda        Data  Total
+      0    Notebook Gamer  Eletrônicos           3   1500  2...
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'index': False}
+           │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+           │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+           └ <function DataFrame.to_parquet at 0x7f6000c1a2a0>
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 3113, in to_parquet
+    return to_parquet(
+           └ <function to_parquet at 0x7f6000504900>
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/io/parquet.py", line 476, in to_parquet
+    impl = get_engine(engine)
+           │          └ 'auto'
+           └ <function get_engine at 0x7f60006ea200>
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/io/parquet.py", line 67, in get_engine
+    raise ImportError(
+
+ImportError: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2025-01-07T20:58:38.993435-0300 ERROR Exceção capturada em 'pipeline_calcular_kpi_de_vendas_consolidado': Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet. log.py
+Traceback (most recent call last):
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/pipeline.py", line 6, in <module>
+    pipeline_calcular_kpi_de_vendas_consolidado(pasta_argumento, formato_de_saida)
+    │                                           │                └ ['csv', 'parquet']
+    │                                           └ 'data'
+    └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x7f60002cbd80>
+
+> File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/log.py", line 27, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('data', ['csv', 'parquet'])
+             └ <function pipeline_calcular_kpi_de_vendas_consolidado at 0x7f60002cbce0>
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/etl.py", line 41, in pipeline_calcular_kpi_de_vendas_consolidado
+    carregar_dados(data_frame_calculado, formato_de_saida)
+    │              │                     └ ['csv', 'parquet']
+    │              └             Produto    Categoria  Quantidade  Venda        Data  Total
+    │                0    Notebook Gamer  Eletrônicos           3   1500  2...
+    └ <function carregar_dados at 0x7f60002cbc40>
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/log.py", line 27, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+             │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+             └ <function carregar_dados at 0x7f60002cbba0>
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/etl.py", line 34, in carregar_dados
+    df.to_parquet("dados.parquet", index=False)
+    │  └ <function DataFrame.to_parquet at 0x7f6000c1a3e0>
+    └             Produto    Categoria  Quantidade  Venda        Data  Total
+      0    Notebook Gamer  Eletrônicos           3   1500  2...
+
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'index': False}
+           │     └ (            Produto    Categoria  Quantidade  Venda        Data  Total
+           │       0    Notebook Gamer  Eletrônicos           3   1500  ...
+           └ <function DataFrame.to_parquet at 0x7f6000c1a2a0>
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 3113, in to_parquet
+    return to_parquet(
+           └ <function to_parquet at 0x7f6000504900>
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/io/parquet.py", line 476, in to_parquet
+    impl = get_engine(engine)
+           │          └ 'auto'
+           └ <function get_engine at 0x7f60006ea200>
+  File "/home/henrique/Documentos/treinamentos/jornadadedados/python-para-dados/aula09/.venv/lib/python3.12/site-packages/pandas/io/parquet.py", line 67, in get_engine
+    raise ImportError(
+
+ImportError: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
